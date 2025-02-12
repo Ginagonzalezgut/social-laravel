@@ -7,7 +7,7 @@ function Create() {
 
     function handleSubmit(event: FormEvent) {
         event.preventDefault();
-        router.post('/posts/store', {
+        router.post('/posts', {
             image,
             caption,
         });
@@ -22,7 +22,10 @@ function Create() {
     }
     return (
         <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-            <form className="mx-auto mt-16 max-w-xl sm:mt-20">
+            <form
+                className="mx-auto mt-16 max-w-xl sm:mt-20"
+                onSubmit={handleSubmit}
+            >
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6">
                     <label
                         className="block text-sm/6 font-semibold text-gray-900"
@@ -54,7 +57,6 @@ function Create() {
                     <button
                         className="shadow-xs block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         type="submit"
-                        onSubmit={handleSubmit}
                     >
                         Publish
                     </button>

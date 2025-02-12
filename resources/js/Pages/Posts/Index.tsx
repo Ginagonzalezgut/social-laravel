@@ -8,7 +8,12 @@ function Index({
     }[];
 }) {
     return posts.map((post) => {
-        return <div key={post.id}>{post.caption}</div>;
+        return (
+            <div key={post.id}>
+                <img src={post.image} alt="" />
+                {post.caption}
+            </div>
+        );
     });
 }
 
