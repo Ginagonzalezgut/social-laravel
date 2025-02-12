@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class PostController extends Controller
 {
     public function create()
     {
-        return view("posts.create");
+        return Inertia::render("Posts/Create");
     }
 }
